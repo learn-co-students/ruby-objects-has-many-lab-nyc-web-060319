@@ -31,9 +31,8 @@ class Author
     end
 
     def self.post_count #returns number of posts for ALL exisiting authors
-        total_posts = []
-        @@all.each do |author|
-            total_posts << author.posts.length
+        total_posts = @@all.collect do |author|
+            author.posts.length
         end  
         total_posts.reduce(:+)  
     end
