@@ -1,0 +1,28 @@
+class Song
+
+    attr_reader :title, :artist
+    attr_accessor :name
+
+    @@all = []
+
+    def initialize(name)
+        @name = name
+        @@all << self
+    end
+
+    def self.all
+        @@all
+    end
+
+    def artist=(artist)
+        @artist = artist
+    end
+
+    def artist_name
+        if self.artist == nil
+            nil
+        else
+            self.artist.name
+        end
+    end
+end
